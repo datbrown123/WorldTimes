@@ -9,6 +9,12 @@ timeRegexp = /^(\S+) (\w+)\:(\w+).*$/
 
 Locations['New York'] = realTime - (5*hour); #UTC -0500
 Locations['San Francisco'] = realTime - (8*hour); 
+
+if(realTime.month > 3 && realTime.month < 11){ #daylight savings check if april thru november
+  Locations['New York'] += hour;
+  Locations['San Francisco'] += hour;
+}
+
 Locations['London'] = realTime + hour;
 Locations['Hong Kong'] = realTime + (8*hour);
 Locations['Moscow'] = realTime + (3*hour);
