@@ -22,7 +22,7 @@ Locations['Seoul'] = realTime + (9*hour);
 puts
 Locations.each { |k, v|
   v.to_s =~ timeRegexp  #Match regexp  $1 = date, $2 = hour, $3 = minutes
-  puts k + "    Date: " + $1 + ", Time: " + $2 + ":" + $3
+  puts k + " " + v.to_s
   puts "------------------------------------------------"
 }
 puts
